@@ -1,0 +1,194 @@
+@import "global";
+
+.hire-us {
+  position: relative;
+  height: 100vh;
+
+  .hire-us-wrapper {
+    padding: 122px 16px 218px;
+
+    @include md {
+      padding: 160px 0 0;
+    }
+  }
+
+  .title-wrapper {
+    max-width: 645px;
+  }
+
+  .hire-us-title {
+    margin-bottom: 32px;
+    font-family: $font-family-secondary;
+    font-weight: $font-weight-small;
+  }
+  
+  .hire-us-text {
+    max-width: 475px;
+    font-size: 1.6rem;
+    line-height: 32px;
+    color: $text-color;
+    margin-bottom: 32px;
+    @include FuturaPT-Demi;
+
+    @include md {
+      font-size: 2rem;
+    }
+  }
+
+  .hire-us-btn {
+    font-size: 2rem;
+    padding: 16px 32px;
+    margin-bottom: 50px;
+    @include FuturaPT-Bold;
+
+    @include md {
+      margin-bottom: unset;
+    }
+  }
+
+  .title-shadow {
+    &::before {
+      content: "Hire us";
+      top: -25%;
+      line-height: 0.74;
+      @include FuturaPT-Bold;
+      font-size: 7rem;
+
+      @include md {
+        top: -35%;
+        font-size: 15rem;
+      }
+    }
+  }
+
+  .trusted {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+    @include md {
+      top: 0;
+      right: 0;
+      width: unset;
+    }
+  }
+
+  .trusted-wrapper {
+    padding: 50px 0;
+    text-align: center;
+    background-color: $light-gray-background;
+
+    @include md {
+      height: 100vh;
+      padding: 50px;
+    }
+
+    @include lg {
+      padding: 100px 50px;
+    }
+  }
+
+  .trusted-title {
+    font-size: 1.6rem;
+    margin-bottom: 50px;
+    color: $trusted-title;
+    @include FuturaPT-Demi;
+
+    @include lg {
+      margin-bottom: 80px;
+    }
+  }
+
+  .trusted-clients {
+    padding-bottom: 50px;
+    position: relative;
+    overflow: hidden;
+
+    @include md {
+      padding: 0 150px;
+      height: calc(100% - 40px);
+    }
+
+    .trusted-clients-hidden {
+      display: none;
+    }
+  }
+
+  .trusted-clients-img {
+    padding-right: 32px;
+
+    @include md {
+      padding-right: unset;
+      margin-bottom: 80px;
+    }
+
+    @include lg {
+      margin-bottom: 100px;
+    }
+  }
+
+  .trusted-clients-visible {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    left: 0;
+
+    @include md {
+      flex-direction: column;
+      justify-content: center;
+      right: 0;
+      top: 0;
+    }
+  }
+
+  .infinite-slide {
+    animation: hire-us-slide-loop 10s linear infinite;
+
+    @include md {
+      animation: unset;
+    }
+  }
+
+  @keyframes hire-us-slide-loop {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes hire-us-fadein {
+    from {
+      transform: translateY(30%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes hire-us-fadeout {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(-30%);
+    }
+  }
+
+  .fade-in .trusted-clients-img {
+    opacity: 0;
+    animation: hire-us-fadein 0.2s forwards;
+  }
+
+  .fade-out .trusted-clients-img {
+    animation: hire-us-fadeout 0.2s forwards;
+  }
+
+  .fade-in .trusted-clients-img,
+  .fade-out .trusted-clients-img {
+    @include animationDelay(5);
+  }
+}

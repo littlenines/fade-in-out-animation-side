@@ -1,0 +1,45 @@
+$font-weight-small: 500;
+$font-weight-medium: 600;
+$font-weight-strong: 700;
+$font-weight-bold: 800;
+$font-weight-bolder: 900;
+
+//add font-family
+$font-family-primary: futura-pt, "Arial Condensed", sans-serif;
+$font-family-secondary: lust-display, "Courier", serif;
+
+@mixin FuturaPT-Medium {
+  font-family: $font-family-primary;
+  font-weight: $font-weight-small;
+  font-style: normal;
+}
+
+@mixin FuturaPT-MediumObl {
+  font-family: $font-family-primary;
+  font-weight: $font-weight-small;
+  font-style: italic;
+}
+
+@mixin FuturaPT-Heavy {
+  font-family: $font-family-primary;
+  font-weight: $font-weight-strong;
+  font-style: normal;
+}
+
+@mixin FuturaPT-Demi {
+  font-family: $font-family-primary;
+  font-weight: $font-weight-medium;
+  font-style: normal;
+}
+
+@mixin FuturaPT-Bold {
+  font-family: $font-family-primary;
+  font-weight: $font-weight-bold;
+  font-style: normal;
+}
+
+@mixin LustDisplay {
+  font-family: $font-family-secondary;
+  font-weight: $font-weight-strong;
+  font-style: italic;
+}
